@@ -1,0 +1,52 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary bg-info text-light navbar-dark pt-2">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/home" fontIcon="home"> Movie Ticket</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        
+        <li class="nav-item">
+        <a class="nav-link active" aria-current="page" routerLink="/admin" *ngIf="getRole()=='Admin'"
+            >Admin Dashboard</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" routerLink="/myProfile" *ngIf="getRole()=='User'"
+                >My Profile</a>
+              </li>
+              
+          <li class="nav-item">
+            
+            <a class="nav-link active" aria-current="page" routerLink="/addMovie" *ngIf="getRole()=='Admin'">Add Movie
+            </a>
+          </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" routerLink="/ticketList" *ngIf="getRole()=='Admin'"
+                  >Ticket History</a>
+                </li>
+  
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" routerLink="/user" *ngIf="getRole()=='User'"
+            
+            >User Dashboard</a>
+            </li>
+          
+          
+    
+    <div id="logout">
+      <a *ngIf="(isLoggedIn() && !(getRole()=='null') && !(getRole()=='undefined'))" class="nav-link active" aria-current="page"   (click)="logout()" class="btn btn-danger">Logout</a>
+    </div>
+
+    <div id="login">
+      <a *ngIf=" !(isLoggedIn())" class="nav-link active" aria-current="page"   (click)="login()"  mat-raised-button color="primary" >Login</a>
+    </div>
+   
+
+ </ul>
+ </div>
+ </div>
+
+  
+</nav>

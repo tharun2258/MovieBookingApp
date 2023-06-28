@@ -1,0 +1,61 @@
+
+<br>
+<mat-card>
+    <mat-card-content>
+      <form #updateForm="ngForm" (ngSubmit)="updateMovie()">
+        <h2>Update Ticket</h2>
+        
+        <div class="example-container" >
+        <mat-form-field>
+            <mat-label>Movie Id</mat-label>
+          <input matInput  [(ngModel)]="movie.movieId" name="movieId"  [readonly]="true"> 
+        </mat-form-field>
+  </div>
+        <div class="example-container" >
+          <mat-form-field>
+            <mat-label>Movie Name</mat-label>
+            <input matInput type="text" [(ngModel)]="movie.movieName" name="movieName"  [readonly]="true">
+          </mat-form-field>
+          </div>
+
+
+          <div class="example-container">
+            <mat-form-field>
+                <mat-label>Theatre Name</mat-label>
+              <input matInput type="text" [(ngModel)]="movie.theatre" name="theatre"  [readonly]="true"> 
+            </mat-form-field>
+            </div>
+
+
+
+            <div class="example-container">
+                <mat-form-field>
+                    <mat-label>Tickets Available</mat-label>
+                  <input matInput type="text" [(ngModel)]="movie.ticketsAvailable" name="ticketsAvailable"  >
+                </mat-form-field>
+                </div>
+
+                <div class="example-container">
+                  <mat-form-field>
+                      <mat-label>Tickets Sold</mat-label>
+                    <input matInput type="text" [(ngModel)]="movie.totalTickets -movie.ticketsAvailable" name="ticketsSold"  [readonly]="true">
+                  </mat-form-field>
+                  </div>
+
+
+
+                <div class="example-container">
+                    <mat-form-field>
+                        <mat-label>Total Tickets</mat-label>
+                      <input matInput type="text" [(ngModel)]="movie.totalTickets" name="totalTickets" [readonly]="true" >
+                    </mat-form-field>
+                    </div>
+
+
+
+                   
+        
+        <button mat-raised-button color="primary" [disabled]="!updateForm.form.valid">Save</button>
+      </form>
+    </mat-card-content>
+  </mat-card>

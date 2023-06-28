@@ -1,0 +1,83 @@
+
+<br>
+<br>
+<br>
+<table mat-table [dataSource]="movie" class="mat-elevation-z8">
+
+ 
+
+  <ng-container matColumnDef="movieId">
+    <th mat-header-cell *matHeaderCellDef> Movie Id </th>
+    <td mat-cell *matCellDef="let element"> {{element.movieId}} </td>
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="movieName">
+    <th mat-header-cell *matHeaderCellDef> Name </th>
+    <td mat-cell *matCellDef="let element"> {{element.movieName}} </td>
+  </ng-container>
+
+  <!-- Weight Column -->
+  <ng-container matColumnDef="theatre">
+    <th mat-header-cell *matHeaderCellDef> theatre </th>
+    <td mat-cell *matCellDef="let element"> {{element.theatre}} </td>
+  </ng-container>
+
+  <!-- Symbol Column -->
+  <ng-container matColumnDef="ticketsAvailable">
+    <th mat-header-cell *matHeaderCellDef> ticketsAvailable </th>
+    <td mat-cell *matCellDef="let element"> {{element.ticketsAvailable}} </td>
+  </ng-container>
+
+  
+
+
+  <ng-container matColumnDef="ticketStatus">
+    <th mat-header-cell *matHeaderCellDef> ticketStatus </th>
+    <td mat-cell *matCellDef="let element"> <div *ngIf="element.ticketsAvailable>0; else elseBlock"><button mat-button color="primary"
+      ><td>Tickets Available</td></button> <br></div>
+      <ng-template #elseBlock> <button class=mat-button disabled
+        ><td>SOLD OUT</td></button><br></ng-template> </td>
+    
+  </ng-container>
+
+ 
+   
+
+  <ng-container matColumnDef="Update">
+    <th mat-header-cell *matHeaderCellDef> Update </th>
+    <td mat-cell *matCellDef="let element"> <button mat-raised-button color="accent" routerLink="/update/{{element.movieId}}">Update</button> <br></td>
+  </ng-container>
+ 
+                  
+  <ng-container matColumnDef="Delete">
+    <th mat-header-cell *matHeaderCellDef> Delete </th>
+    <td mat-cell *matCellDef="let element"> <button mat-fab color="warn"  (click)="deleteMovieAdmin(element.movieId)" >
+      <mat-icon>delete</mat-icon>
+    </button></td>
+  </ng-container>
+                 
+            
+                   
+                
+             
+                     <td mat-cell *matCellDef="let element"></td>
+                      
+                    
+                 
+               
+              
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+             
+              </table>
+
+              
+         
+        
+   
+    
+
+
+  

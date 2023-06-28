@@ -1,0 +1,13 @@
+table {
+    width: 100%;
+  }
+
+  mat-card {
+    max-width: 330px;
+  
+    background-color:lightskyblue;
+  }
+
+
+   
+  

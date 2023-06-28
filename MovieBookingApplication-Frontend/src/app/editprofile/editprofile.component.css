@@ -1,0 +1,16 @@
+mat-card {
+    
+    text-align: center;
+    
+    font-size: 1px;
+    background-color:darkseagreen;
+    
+  }
+  
+  mat-form-field {
+    height:70px;
+    display: block;
+   
+  }
+ 
+  

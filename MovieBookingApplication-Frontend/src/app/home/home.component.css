@@ -1,0 +1,41 @@
+#title {
+
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color:black;
+  font-family:serif;
+  font-weight: bolder;
+  font-style: italic;
+  
+  }
+
+  #body{
+    background-color:lightblue;
+  }
+
+h3{
+  font-family: Arial, Helvetica, ;
+  
+}
+
+#login{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: greenyellow;
+  background-color: rgb(255, 255, 255);
+}
+
+
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    size-adjust: 50px;
+  }
+
+ 
